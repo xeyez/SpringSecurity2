@@ -39,4 +39,9 @@ public class SecurityController {
 	public void denied() {
 		logger.info("=========== denied");
 	}
+	
+	@RequestMapping("/user/loginform")
+	public void loginform() {
+		logger.info("=========== loginform");
+	}
 }

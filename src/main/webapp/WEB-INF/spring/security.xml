@@ -13,16 +13,32 @@
 		<sec:intercept-url pattern="/member/**" access="isAuthenticated()" />
 		<sec:intercept-url pattern="/**" access="permitAll" />
 
-		<sec:form-login />
+		<sec:form-login 
+			login-page="/user/loginform"
+			login-processing-url="/user/login"
+			
+			username-parameter="userid"
+			password-parameter="password"
+			
+			default-target-url="/index"
+			
+			authentication-failure-url="/user/loginform?error=true"
+		/>
 		<sec:logout logout-success-url="/index" />
 	</sec:http>
 	
 	<sec:authentication-manager>
 		<sec:authentication-provider>
-			<sec:jdbc-user-service data-source-ref="dataSource"/>
+			<sec:jdbc-user-service data-source-ref="dataSource" id="jdbcUserService" />
 		</sec:authentication-provider>
 	</sec:authentication-manager>
 	
+	<bean id="userJoinService" class="io.github.xeyez.user.UserJoinService">
+		<property name="userDetailsManager" ref="jdbcUserService" />
+		<!-- 
+		<property name="passwordEncoder" ref="passwordEncoder" />
+		-->
+	</bean>
 	
 	
 	<!-- <sec:authentication-manager>

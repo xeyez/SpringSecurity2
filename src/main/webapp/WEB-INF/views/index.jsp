@@ -8,7 +8,8 @@
 <body>
 
 <sec:authorize access="!isAuthenticated()">
-	<a href="<c:url value='spring_security_login' />">Login</a> <br>
+	<%-- <a href="<c:url value='spring_security_login' />">Login</a> <br> --%>
+	<a href="<c:url value='/user/loginform' />">Login</a> <br>
 	<a href="<c:url value='/user/join' />">회원 가입</a>
 </sec:authorize>
 
