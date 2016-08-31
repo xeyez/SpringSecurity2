@@ -1,4 +1,4 @@
-package io.xeyez.controller;
+package io.github.xeyez.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
