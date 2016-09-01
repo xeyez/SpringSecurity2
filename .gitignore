@@ -1,5 +1,5 @@
 ﻿
-# Created by https://www.gitignore.io/api/java,windows,eclipse
+# Created by https://www.gitignore.io/api/windows,eclipse,maven,java
 
 ### Windows ###
 # Windows image file caches
@@ -74,6 +74,18 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
 
 
 ### Java ###
