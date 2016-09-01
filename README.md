@@ -1,5 +1,5 @@
 # SpringSecurity1
- Study for 'Spring security'. This project is incomplete. 
+In-depth study for Spring Security.
 
 ## 구현 ##
 * 권한에 따른 페이지 처리 (+ 권한 없을 시 Custom page 보이기)
