@@ -8,6 +8,7 @@ In-depth study for Spring Security.
 * MySQL 연동 및 읽기
 * 회원 가입 (비밀번호 평문)
 * 회원 가입 (비밀번호 bCrypt 암호화)
+* 로그인 - Remember Me (1주)
 
 ## 미구현 ##
 1. Custom Table & Custom VO 사용
