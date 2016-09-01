@@ -11,7 +11,11 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="io.xeyez.controller">
+	<logger name="io.github.xeyez.controller">
+		<level value="info" />
+	</logger>
+	
+	<logger name="io.github.xeyez.user.custom">
 		<level value="info" />
 	</logger>
 	

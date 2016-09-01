@@ -19,8 +19,10 @@
     <input type="password" name="password" /> 
     <br/>
     
+    
     <input id = "remember_me" name ="_spring_security_remember_me" type = "checkbox" />Remember me
     <br />
+    
     
     <input type="submit" value="로그인" />
 </form>
