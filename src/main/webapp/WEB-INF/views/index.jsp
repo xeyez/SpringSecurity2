@@ -15,7 +15,8 @@
 
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="name" var="name"/>
-	<a href="<c:url value='/j_spring_security_logout' />">Logout (${name})</a>
+	<%-- <a href="<c:url value='/j_spring_security_logout' />">Logout (${name})</a> --%>
+	<a href="<c:url value='/user/logout' />">Logout (${name})</a>
 </sec:authorize>
 
 <br>
