@@ -1,4 +1,4 @@
-# SpringSecurity1
+# SpringSecurity2
 In-depth study for Spring Security.
 
 ## 구현 ##
