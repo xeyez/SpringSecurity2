@@ -3,10 +3,10 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-	<title>매니저 메인</title>
+	<title>Manager</title>
 </head>
 <body>
-매니저(연결 계정: <sec:authentication property="name"/>) 메인 화면입니다.
+Manager(<sec:authentication property="name"/>) 화면입니다.
 <br>
 <a href="<c:url value='/index'/>">[/index로 가기]</a>
 </body>

@@ -3,7 +3,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-	<title>인덱스 페이지</title>
+	<title>Spring Security</title>
 </head>
 <body>
 
