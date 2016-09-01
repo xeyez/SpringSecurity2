@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 public class UserJoinService {
 	private UserDetailsManager userDetailsManager;
-	
 	private PasswordEncoder passwordEncoder;
 
 	public void setUserDetailsManager(UserDetailsManager userDetailsManager) {
@@ -27,9 +26,18 @@ public class UserJoinService {
 
 	@Transactional
 	public void join(NewUser newUser) {
+		String id = newUser.getName();
+		if(id.contains("admin"))
+			throw new UnavailableIDException("\"admin\"은 포함될 수 없습니다.");
+		if(id.contains("manager"))
+			throw new UnavailableIDException("\"manager\"는 포함될 수 없습니다.");
+		else if (!id.matches("[0-9|a-z|A-Z]*"))
+			throw new UnavailableIDException("영문 대소문자 및 숫자 외에 다른 문자는 포함될 수 없습니다.");
+		
+		
 		String encodedPassword = passwordEncoder.encode(newUser.getPassword());
 		
-		UserDetails user = new User(newUser.getName(), encodedPassword,
+		UserDetails user = new User(id, encodedPassword,
 				Arrays.asList(new SimpleGrantedAuthority("USER")));
 		
 		try {
