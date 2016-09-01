@@ -10,7 +10,6 @@
 * 회원 가입 (비밀번호 bCrypt 암호화)
 
 ## 미구현 ##
-### Ver.2 예정 ###
 1. Custom Table & Custom VO 사용
 2. 세부적인 조작을 위한 Custom Handler
 3. 계층별 분할(Persistence, Service) 및 MyBatis, log4jdbc-jdbc2 연동
