@@ -27,7 +27,14 @@
 			
 			authentication-failure-url="/user/loginform?error=true"
 		/>
-		<sec:logout logout-success-url="/index" />
+		<sec:logout 
+			logout-success-url="/index"
+			
+			invalidate-session="true"
+			delete-cookies="JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE"
+		/>
+		
+		<sec:remember-me key="remembermeKey" token-validity-seconds="604800" /> <!-- 1주 -->
 	</sec:http>
 	
 	<sec:authentication-manager>
