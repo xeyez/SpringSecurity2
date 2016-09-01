@@ -12,6 +12,6 @@
 * 회원 가입 (비밀번호 bCrypt 암호화)
 
 ### Ver.2 예정 ###
-* Custom Table 사용
+* Custom Table & Custom VO 사용
 * 세부적인 조작을 위한 Custom Handler
 * MyBatis 연동
