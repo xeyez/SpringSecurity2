@@ -8,16 +8,13 @@
 <body>
 
 <form:form method="post" commandName="newUser">
-    <label for="name">사용자이름</label>:
-    <form:input path="name"/> 
-    <form:errors path="name"/> <br/>
+    ID : <form:input path="userid"/> 
+    <form:errors path="userid"/> <br/>
     
-    <label for="password">암호</label>:
-    <form:password path="password"/> 
-    <form:errors path="password"/> <br/>
+    암호 : <form:password path="userpw"/> 
+    <form:errors path="userpw"/> <br/>
     
-    <label for="confirm">암호 확인</label>:
-    <form:password path="confirm"/> 
+    암호 확인 : <form:password path="confirm"/> 
     <form:errors path="confirm"/> <br/>
     
     <input type="submit" value="가입" />

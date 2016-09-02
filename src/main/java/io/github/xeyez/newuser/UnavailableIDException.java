@@ -1,4 +1,4 @@
-package io.github.xeyez.user;
+package io.github.xeyez.newuser;
 
 @SuppressWarnings("serial")
 public class UnavailableIDException extends RuntimeException {

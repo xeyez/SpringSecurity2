@@ -18,6 +18,17 @@
 		<property name="user" value="${jdbc.user}"></property>
 		<property name="password" value="${jdbc.password}"></property>
 	</bean>
+
+	<!-- MyBatis -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:/mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml" />
+	</bean>
+	
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
 	
 	<!-- Transaction -->
 	<bean id="transactionManager"
@@ -27,11 +38,8 @@
 	
 	<tx:annotation-driven proxy-target-class="true"/>
 	
-	
-	<!-- Password 암호화하여 삽입 -->
-	<!-- <bean id="userJoinService" class="io.github.xeyez.security.user.UserJoinService">
-		<property name="userDetailsManager" ref="jdbcUserService"></property>
-		<property name="passwordEncoder" ref="passwordEncoder"></property>
-	</bean> -->
+	<context:component-scan base-package="io.github.xeyez.persistence" />
+	<!-- <context:component-scan base-package="io.github.xeyez.service" /> -->
+	<context:component-scan base-package="io.github.xeyez.security" />
 	
 </beans>
