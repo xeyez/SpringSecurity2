@@ -1,11 +1,10 @@
 package io.xeyez.test;
 
-import javax.inject.Inject;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -16,12 +15,16 @@ import io.github.xeyez.persistence.UserDAO;
 @ContextConfiguration(locations={"file:src/main/webapp/WEB-INF/spring/**/*.xml"})
 public class DAOTest {
 	
-	@Inject
 	UserDAO dao;
+	
+	@Value("${mybatis.user.namespace}")
+	String test1;
+	
+	@Value("${required}")
+	String test2;
 	
 	private static final Logger logger = LoggerFactory.getLogger(DAOTest.class);
 
-	@Test
 	public void create() throws Exception {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
@@ -37,5 +40,10 @@ public class DAOTest {
 	public void delete() throws Exception {
 		dao.deleteUser("admin");
 		dao.deleteUser("manager");
+	}
+	
+	@Test
+	public void test() {
+		System.out.println(test1 + " / " + test2);
 	}
 }

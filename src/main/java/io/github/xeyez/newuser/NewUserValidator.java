@@ -7,7 +7,7 @@ import org.springframework.validation.Validator;
 import io.github.xeyez.domain.NewUserVO;
 
 public class NewUserValidator implements Validator {
-
+	
 	@Override
 	public boolean supports(Class<?> clazz) {
 		return NewUserVO.class.isAssignableFrom(clazz);
@@ -15,9 +15,11 @@ public class NewUserValidator implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userid", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userpw", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirm", "required");
+		//System.out.println("======================== requiredFieldMessage : " + requiredFieldMessage);
+		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userid", "required", "필수 항목");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userpw", "required", "필수 항목");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirm", "required", "필수 항목");
 		
 		NewUserVO newUser = (NewUserVO) target;
 		if (!newUser.isPasswordAndConfirmSame())
