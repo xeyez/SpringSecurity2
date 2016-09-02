@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -18,19 +19,23 @@ public class DAOTest {
 	@Inject
 	UserDAO dao;
 	
-	
 	private static final Logger logger = LoggerFactory.getLogger(DAOTest.class);
-	
-	public void test1() throws Exception {
-		logger.info("삽입합니다!");
-		
-		dao.createUser("user00", "123", "user00", "USER");
-	}
 
 	@Test
-	public void test2() throws Exception {
-		boolean b = dao.userExists("user00");
+	public void create() throws Exception {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
-		logger.info("존재하냐? " + b);
+		dao.createUser("admin", encoder.encode("admin123"), "admin", "ADMIN");
+		dao.createUser("manager", encoder.encode("manager123"), "manager", "MANAGER");
+	}
+	
+	public void select() throws Exception {
+		logger.info(dao.getUser("admin").toString());
+		logger.info(dao.getUser("manager").toString());
+	}
+
+	public void delete() throws Exception {
+		dao.deleteUser("admin");
+		dao.deleteUser("manager");
 	}
 }
