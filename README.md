@@ -8,9 +8,13 @@ In-depth study for Spring Security.
 * MySQL 연동 및 읽기
 * 회원 가입 (비밀번호 평문)
 * 회원 가입 (비밀번호 bCrypt 암호화)
-* 로그인 - Remember Me (1주)
+* 로그인 - 자동 로그인(Remember Me) (1주)
+
+* Custom Table & Custom VO 사용
+ * 계층별 분할(Persistence, Service)
+ * MyBatis 연동
 
 ## 미구현 ##
-1. Custom Table & Custom VO 사용
-2. 세부적인 조작을 위한 Custom Handler
-3. 계층별 분할(Persistence, Service) 및 MyBatis, log4jdbc-jdbc2 연동
+* Session 및 Cookie 조작
+ * Remember me (자동 로그인) Custom 구현
+ * HttpSession 대신 Cookie 사용. (서버 과부하 줄이기)
