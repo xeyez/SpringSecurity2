@@ -1,4 +1,4 @@
-package io.github.xeyez.newuser;
+package io.github.xeyez.security;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;

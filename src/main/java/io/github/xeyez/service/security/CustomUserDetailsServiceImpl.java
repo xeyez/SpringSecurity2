@@ -17,8 +17,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import io.github.xeyez.domain.UserVO;
-import io.github.xeyez.newuser.UnavailableIDException;
 import io.github.xeyez.persistence.UserDAO;
+import io.github.xeyez.security.UnavailableIDException;
 
 @Service
 public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {
@@ -29,8 +29,6 @@ public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {
 	public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
 		this.passwordEncoder = passwordEncoder;
 	}
-	
-	//private CustomPasswordEncoder passwordEncoder;
 	
 	@Inject
 	private UserDAO dao;

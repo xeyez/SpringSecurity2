@@ -13,14 +13,13 @@
 		<property name="passwordEncoder" ref="passwordEncoder" />
 	</bean>
 	
-	<sec:authentication-manager>
-		<sec:authentication-provider ref="authProvider" />
-	</sec:authentication-manager>
-	
 	<bean id="customUserDetailsService" class="io.github.xeyez.service.security.CustomUserDetailsServiceImpl">
 		<property name="passwordEncoder" ref="passwordEncoder" />
 	</bean>
-
+	
+	<sec:authentication-manager>
+		<sec:authentication-provider ref="authProvider" />
+	</sec:authentication-manager>
 
 
 	<sec:http use-expressions="true">

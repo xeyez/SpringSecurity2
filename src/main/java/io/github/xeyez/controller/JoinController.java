@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import io.github.xeyez.domain.NewUserVO;
-import io.github.xeyez.newuser.NewUserValidator;
+import io.github.xeyez.security.NewUserValidator;
 import io.github.xeyez.service.security.CustomUserDetailsService;
 
 @Controller
