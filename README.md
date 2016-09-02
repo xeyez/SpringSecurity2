@@ -6,9 +6,10 @@ In-depth study for Spring Security.
 * 로그아웃 후 지정한 페이지로 이동
 * Custom 로그인 View
 * MySQL 연동 및 읽기
-* 회원 가입 (비밀번호 평문)
-* 회원 가입 (비밀번호 bCrypt 암호화)
 * 로그인 - 자동 로그인(Remember Me) (1주)
+* 회원 가입
+ * 비밀번호 bCrypt 암호화
+ * form:form tag와 Validator를 이용한 입력값 검증.
 
 * Custom Table & Custom VO 사용
  * 계층별 분할(Persistence, Service)
