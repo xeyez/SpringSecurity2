@@ -18,3 +18,5 @@ In-depth study for Spring Security.
 * Session 및 Cookie 조작
  * Remember me (자동 로그인) Custom 구현
  * HttpSession 대신 Cookie 사용. (서버 과부하 줄이기)
+* 회원 탈퇴, 비밀번호 변경, 회원 정보 수정
+ * 내부 Logic은 다 짜여 있으나 View 처리는 안된 상태.
