@@ -1,4 +1,4 @@
-package io.github.xeyez.service.security;
+package io.github.xeyez.security;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import io.github.xeyez.domain.UserVO;
 import io.github.xeyez.persistence.UserDAO;
-import io.github.xeyez.security.UnavailableIDException;
 
 @Service
 public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {

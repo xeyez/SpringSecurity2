@@ -1,4 +1,4 @@
-package io.github.xeyez.service.security;
+package io.github.xeyez.security;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 

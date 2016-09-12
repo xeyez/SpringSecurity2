@@ -13,7 +13,7 @@
 		<property name="passwordEncoder" ref="passwordEncoder" />
 	</bean>
 	
-	<bean id="customUserDetailsService" class="io.github.xeyez.service.security.CustomUserDetailsServiceImpl">
+	<bean id="customUserDetailsService" class="io.github.xeyez.security.CustomUserDetailsServiceImpl">
 		<property name="passwordEncoder" ref="passwordEncoder" />
 	</bean>
 	
