@@ -37,9 +37,9 @@
 	<bean id="nullRequestCache" class="org.springframework.security.web.savedrequest.NullRequestCache" />
 	
 	
-	<bean id="customLogoutSuccessHandler" class="io.github.xeyez.security.handler.CustomLogoutSuccessHandler" >
+	<!-- <bean id="customLogoutSuccessHandler" class="io.github.xeyez.security.handler.CustomLogoutSuccessHandler" >
 		<property name="logoutSuccessUrl" value="/index" />
-	</bean>
+	</bean> -->
 	
 	<!-- <bean id="customSecurityContextRepository" class="io.github.xeyez.security.handler.CustomSecurityContextRepository">
 	</bean> -->
@@ -63,20 +63,20 @@
 			username-parameter="userid"
 			password-parameter="password"
 		/>
-		<!-- <sec:logout 
+		<sec:logout 
 			logout-url="/user/logout"
 			logout-success-url="/index"
 			
 			invalidate-session="true"
 			delete-cookies="JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE"
-		/> -->
+		/>
 		
-		<sec:logout 
+		<!-- <sec:logout 
 			logout-url="/user/logout"
 			success-handler-ref="customLogoutSuccessHandler"
 			
 			delete-cookies="JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE"
-		/>
+		/> -->
 		
 		<sec:remember-me user-service-ref="customUserDetailsService" key="remembermeKey" token-validity-seconds="604800" />
 	</sec:http>
