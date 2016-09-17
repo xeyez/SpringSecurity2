@@ -11,6 +11,8 @@
 <strong>아이디와 암호가 일치하지 않습니다.</strong>
 </c:if>
 <form action="<c:url value='/user/login'/>" method="post">
+	<input type="hidden" name="returl" value="${param.returl}">
+
     <label for="name">사용자ID</label>:
     <input type="text" name="userid" /> 
     <br/>
